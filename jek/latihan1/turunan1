@@ -1,0 +1,46 @@
+using system;
+using system.collections.generic;
+using system.linq;
+using system.text;
+
+namespace latihan
+{
+        public class parent
+        {
+            public string name;
+            public parent (string s)
+            {
+                console.writeline("parent constructor was called with "+s);
+                name = s;
+            }
+
+            public virtual void dowork()
+            {
+                console.writeline("parent is doing work"):
+            }
+        }
+        public class child : parent 
+        {
+            public child(string initialname):base(initialname)
+            {
+                console.writeline("child constructor was called with "+initialname);
+               this.name = initialname;
+            }
+
+            public override void dowork()
+            {
+                console.writeline("child is doing work");
+                base.dowork(); 
+            }
+        }
+        class program
+        {
+            static void main (string[] args)
+            {
+                child c = new child("bob");
+                console.writeline(c.name);
+                c.dowork()
+            }
+        }
+    
+}
